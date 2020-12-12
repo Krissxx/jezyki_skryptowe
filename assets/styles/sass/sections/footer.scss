@@ -1,0 +1,115 @@
+footer{
+    overflow: hidden;
+    position: relative;
+    padding: 147.5px 15px 0;
+    
+    &::before{
+        content: '';
+        display: block;
+        width: 50%;
+        height: 1px;
+        background-color: #707070;
+        opacity: 0.6;
+        position: absolute;
+        top: 147.5px;
+        left: 0;
+    }
+
+    &::after{
+        content: '';
+        width: 58.333vw;
+        height: 43.229vw;
+        position: absolute;
+        background-image: url($pathImages + '110_logo_black.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.15;
+        right: -268px;
+        bottom: -293px;
+        max-width: 1120px;
+        max-height: 830px;
+    }
+
+    .footer-content{
+        max-width: 1088px;
+        width: 100%;
+        margin: auto;
+        padding: 112px 0 122px;
+        position: relative;
+
+        @media (max-width: 576px){
+            padding: 152px 0 122px;
+        }
+
+        .logo-110{
+            padding: 0 47.5px;
+            background-color: #fff;
+            position: absolute;
+            top: -15px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            max-width: 137px;
+
+            img{
+                padding: 0;
+                max-width: 42px;
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .top{
+            position: relative;
+            margin-bottom: 40px;
+
+            @media (max-width: 576px){
+                text-align: center;
+            }
+
+            .ask-box{
+                left: 0;
+                right: 0;
+                margin: auto;
+                position: absolute;
+                top: 0;
+                max-width: 164px;
+
+                @media (max-width: 768px){
+                    left: unset;
+                }
+                
+                @media (max-width: 576px){
+                    left: 0;
+                    top: -80px;
+                }
+            }
+
+            .mail{
+                @include font18();
+            }
+        }
+
+        .copyright{
+            display: flex;
+            justify-content: space-between;
+
+            @media (max-width: 576px){
+                flex-direction: column-reverse;
+                align-items: center;
+                text-align: center;
+            }
+
+            p{
+                color: #222222;
+                opacity: 0.7;
+                @include font12(500);
+                
+                @media (max-width: 576px){
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}

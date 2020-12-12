@@ -1,0 +1,22 @@
+.ask-box{
+    padding-left: 57px;
+    position: relative;
+
+    &::before{
+        content: '';
+        display: block;
+        width: 36px;
+        height: 36px;
+        background-image: url($pathImages + 'icon_chat.svg');
+        background-size: contain;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        left: 0;
+    }
+    p{
+        @include font13(500);
+        color: #1AD768;
+    }
+}

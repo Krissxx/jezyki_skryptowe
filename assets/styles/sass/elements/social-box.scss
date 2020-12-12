@@ -1,0 +1,41 @@
+.social-box{
+    display: flex;
+    align-items: center;
+    
+    .fb, .ig{
+        display: block;
+        width: 15px;
+        height: 15px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        @include transition;
+    }
+
+    .fb{
+        background-image: url($pathImages + 'icon_fb_white.svg');
+        background-size: contain;
+    }
+
+    .ig{
+        background-image: url($pathImages + 'icon_ig_white.svg');
+        margin-right: 50px;
+        
+        @media (max-width: 576px){
+            margin-right: 25px;
+        }
+    }
+    
+}
+
+footer{
+    .social-box{
+        .fb{
+            background-image: url($pathImages + 'icon_fb.svg');
+        }
+
+        .ig{
+            background-image: url($pathImages + 'icon_ig.svg');
+        }
+    }
+}

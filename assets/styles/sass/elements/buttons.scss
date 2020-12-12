@@ -1,0 +1,83 @@
+.default-button{
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.563rem;
+    color: #fff;
+    @include letter-spacing(50);
+    padding: 22px 39px;
+    border: 3px solid #1AD768;
+    background-color: #1AD768;
+    border-radius: 2px;
+    display: block;
+    position: relative;
+    @include transition;
+
+    &:hover{
+        background-color: #ffffff;
+        border: 3px solid #ffffff;
+        color: #1AD768;
+    }
+}
+
+.default-button.transparent{
+    color: #1AD768;
+    border: 3px solid #1AD768;
+    background-color: transparent;
+
+    &:hover{
+        background-color: #1AD768;
+        border: 3px solid #1AD768;
+        color: #ffffff;
+    }
+}
+
+.default-button.arrow{
+    padding: 22px 83px 22px 39px;
+    
+    &::before,
+    &::after{
+        content: '';
+        display: block;
+        width: 8px;
+        height: 15px;
+        position: absolute;
+        top: 2px;
+        bottom: 0;
+        margin: auto;
+        right: 43px;
+        @include transition;
+    }
+
+    &:hover{
+        &::after{
+            opacity: 0;
+        }
+    }
+    
+    &::after{
+        background-image: url($pathImages + 'icon_next.svg');
+    }
+
+    &::before{
+        background-image: url($pathImages + 'icon_next_green.svg');
+    }
+}
+.default-button.arrow-down{
+    
+    &::before,
+    &::after{
+        transform: rotate(90deg);;
+    }
+}
+
+.default-button.arrow.transparent{
+    
+    &::before{
+        background-image: url($pathImages + 'icon_next.svg');
+    }
+
+    &::after{
+        background-image: url($pathImages + 'icon_next_green.svg');
+    }
+}

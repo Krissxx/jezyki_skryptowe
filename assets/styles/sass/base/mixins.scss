@@ -1,0 +1,40 @@
+@mixin transition($time: 0.3s, $property: all, $method: ease-in-out){
+    -webkit-transition: $property $time $method;
+    -moz-transition: $property $time $method;
+    -o-transition: $property $time $method;
+    transition: $property $time $method;
+}
+  
+@mixin letter-spacing($spacing) {
+    letter-spacing: ($spacing / 1000) * 1em;
+}
+
+@mixin font12($font-weight: 500){
+    font-size: 0.75rem;
+    line-height: $fontLineHeight;
+    font-weight: $font-weight;
+}
+
+@mixin font13($font-weight: 700){
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    font-weight: $font-weight;
+}
+
+@mixin font14($font-weight: 500){
+    font-size: 0.875rem;
+    line-height:  1.938rem;
+    font-weight: $font-weight;
+}
+
+@mixin font15($font-weight: 400){
+    font-size: 0.9375rem;
+    line-height: 1.438rem;
+    font-weight: $font-weight;
+}
+
+@mixin font18($font-weight: 600){
+    font-size: 1.125rem;
+    line-height: 2.875rem;
+    font-weight: $font-weight;
+}

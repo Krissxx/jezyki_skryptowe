@@ -1,0 +1,289 @@
+header{
+    padding: 80px 120px 0 105px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    z-index: 99999;
+    @include transition;
+
+    
+    @media (max-width: 768px){
+        padding: 80px 50px 0 50px;
+    }
+
+    @media (max-width: 576px){
+        padding: 40px 15px 0 15px;
+    }
+
+    .logo{
+        @include transition;
+        width: 200px;
+        height: 93px;
+        position: relative;
+
+        img{
+            position: absolute;
+            @include transition;
+            width: 100%;
+            height: 100%;
+            @media (max-width: 576px){
+                width: 150px;
+            }
+        }
+    }
+
+    .right{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        .social-box{
+            margin-right: 7.448vw;
+
+            @media (max-width: 1700px){
+                margin-right: 3.724vw;
+            }
+
+            @media (max-width: 1320px){
+                margin-right: 50px;
+            }
+            
+            @media (max-width: 576px){
+                margin-right: 25px;
+            }
+
+            .fb,
+            .ig{
+                opacity: 0.65;
+                @include transition;
+                
+                &:hover{
+                    opacity: 1;
+                }
+            }
+        }
+
+        .hamburger{
+            padding: 0;
+            height: 20px;
+            display: none;
+            z-index: 99;
+
+            @media (max-width: 1320px){
+                display: block;
+            }
+
+            &:hover{
+                opacity: 1;
+            }
+            
+            .hamburger-box{
+                width: 30px;
+                height: 20px;
+
+                &:hover{
+                    .hamburger-inner{
+                        background-color: #1AD768;
+                        
+                        &::before,
+                        &::after{
+                            background-color: #1AD768;
+                        }
+                    }
+                }
+                
+                .hamburger-inner{
+                    &::before{
+                        top: -8px;
+                    }
+
+                    &::after{
+                        bottom: -8px;
+                    }
+                }
+                
+                .hamburger-inner,
+                .hamburger-inner::after,
+                .hamburger-inner::before{
+                    width: 30px;
+                    height: 2px;
+                    @include transition;
+                    background-color: #fff;
+
+                }
+            }
+        }
+
+        .hamburger.is-active{
+            .hamburger-inner{
+                
+                &::after{
+                    bottom: 0;
+                }
+            }
+        }
+
+        .menu{
+            @include transition;
+            @media (max-width: 1320px){
+                position: absolute;
+                width: 100vw;
+                right: -120px;
+                top: 55px;
+                background-color: #fff;
+                padding: 20px;
+                transform: translateX(200%);
+            }
+
+            @media (max-width: 576px){
+                right: -15px;
+                top: 78px;
+            }
+
+            ul{
+                display: flex;
+                
+                @media (max-width: 1320px){
+                    flex-direction: column;
+                    text-align: center;
+                }
+
+                li{
+                    a{
+                        @include font13(600);
+                        @include letter-spacing(80);
+                        @include transition;
+                        text-transform: uppercase;
+                        color: #fff;
+                        padding: 20px 3.021vw;
+                        white-space: nowrap;
+
+                        @media (max-width: 1700px){
+                            padding: 20px 1.51vw;
+                        }
+
+                        @media (max-width: 1320px){
+                            padding: 20px 0;
+                        }
+
+                        &:hover{
+                            color: #1AD768;
+                        }
+                    }
+
+                    &:last-child{
+                        a{
+                            padding-right: 0;
+                        }
+                    }
+                    
+                    &:first-child{
+                        a{
+                            padding-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .menu.show{
+            transform: translateX(0);
+        }
+
+        .phone{
+            position: absolute;
+            right: 0;
+            top: -60px;
+            @include transition;
+            white-space: nowrap;
+
+            
+            @media (max-width: 576px){
+                @include font18;
+                top: -50px;
+            }
+
+            a{
+                color: #BFFFFF;
+            }
+        }
+    }
+}
+
+header.out,
+header.show{
+    background-color: #ffffff;
+    // padding: 20px 120px 20px 105px;
+    // background-color: rgba(0,0,0,0.5);
+    padding: 10px 120px 10px 105px;
+    box-shadow: 0px 10px 90px 0px rgba(0, 0, 0, 0.15);
+    
+    @media (max-width: 768px){
+        padding: 20px 50px 20px 50px;
+    }
+
+    @media (max-width: 576px){
+        padding: 20px 15px 20px 15px;
+    }
+    
+    .logo{
+        width: 150px;
+        height: 70px;
+
+        img:not(.out){
+            opacity: 0;
+        }
+    }
+
+    .right{
+        .menu{
+            top: 55px;
+
+            ul{
+                li{
+                    a{
+                        color: #222222;
+
+                        &:hover{
+                            color: #1AD768;
+                        }
+                    }
+                }
+            }
+        }
+
+        .hamburger{
+            .hamburger-box{
+                &:hover{
+                    .hamburger-inner{
+                        background-color: #1AD768;
+                        
+                        &::before,
+                        &::after{
+                            background-color: #1AD768;
+                        }
+                    }
+                }
+
+                .hamburger-inner,
+                .hamburger-inner::after,
+                .hamburger-inner::before{
+                    background-color: #aaaaaa;
+                }
+            }
+        }
+
+        .social-box{
+            .fb{
+                background-image: url($pathImages + 'icon_fb.svg');
+            }
+
+            .ig{
+                background-image: url($pathImages + 'icon_ig.svg');
+            }
+        }
+    }
+}
